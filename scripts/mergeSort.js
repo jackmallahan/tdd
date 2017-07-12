@@ -12,6 +12,7 @@ const mergeArrays = (array1, array2) => {
 }
 
 const mergeSort = (array) => {
+  if(Array.isArray(array)){
 	let array1 = []
 	let array2 = []
 
@@ -24,7 +25,10 @@ const mergeSort = (array) => {
 		array1 = mergeSort(array1)
 		array2 = mergeSort(array2)
 	}
-	return mergeArrays(array1, array2)
+	 return mergeArrays(array1, array2)
+  }else {
+  return `${array} is not an array.`
+  }
 }
 
 export default mergeSort
