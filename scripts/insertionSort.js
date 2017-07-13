@@ -15,5 +15,3 @@ if(Array.isArray(array)){
 }
 
 export default insertionSort
-
-//ask why while(j >= 0 && array[j] > array[i]) takes longer
