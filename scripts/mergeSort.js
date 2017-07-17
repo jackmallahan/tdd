@@ -1,18 +1,5 @@
-const mergeArrays = (array1, array2) => {
-  let mergedArray = []
-  while (array1.length > 0 && array2.length > 0) {
-    if (array1[0] <= array2[0]) {
-      mergedArray.push(array1.shift())
-    } else if (array2[0] <= array1[0]) {
-      mergedArray.push(array2.shift())
-    }
-  }
-  mergedArray.push(...array1, ...array2)
-  return mergedArray
-}
-
 const mergeSort = (array) => {
-  if(Array.isArray(array)){
+  if(Array.isArray(array)) {
 	let array1 = []
 	let array2 = []
 
@@ -26,9 +13,24 @@ const mergeSort = (array) => {
 		array2 = mergeSort(array2)
 	}
 	 return mergeArrays(array1, array2)
-  }else {
+  } else {
   return `${array} is not an array.`
   }
+}
+
+const mergeArrays = (array1, array2) => {
+  console.log('array1', array1)
+  console.log('array2', array2)
+  let mergedArray = []
+  while (array1.length > 0 && array2.length > 0) {
+    if (array1[0] <= array2[0]) {
+      mergedArray.push(array1.shift())
+    } else if (array2[0] <= array1[0]) {
+      mergedArray.push(array2.shift())
+    }
+  }
+  mergedArray.push(...array1, ...array2)
+  return mergedArray
 }
 
 export default mergeSort
